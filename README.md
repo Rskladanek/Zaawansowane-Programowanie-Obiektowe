@@ -4,4 +4,4 @@ Projekt ma za zadanie być multi toolem do hackingu z wieloma funkcjami np:
 2. Wysyłanie pakietów DDOS 
 3. Atak flood
 4. Nasłuchiwanie wysyłanych pakietów
-...
+
