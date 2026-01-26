@@ -32,6 +32,7 @@ class PortScanner(NetworkTool):
             print("Nie znaleziono otwartych portów TCP.")
 
     def udp_scan(self, start_port=1, end_port=1024):
+        # Uwaga: UDP skanowanie jest heurystyczne; tu celowo limitowany timeout i brak agresywnego floodu.
         if start_port < 1 or end_port > 65535 or start_port > end_port:
             print("Invalid port range. Ports must be between 1 and 65535, and start_port <= end_port.")
             return
@@ -43,9 +44,9 @@ class PortScanner(NetworkTool):
         for port in range(start_port, end_port + 1):
             scanned_ports += 1
             with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
-                sock.settimeout(0.1)
+                sock.settimeout(0.1)  
                 try:
-                    sock.sendto(b'', (self.target, port))
+                    sock.sendto(b'ping', (self.target, port))
                     try:
                         data, _ = sock.recvfrom(1024)
                         # If any data received, consider port open (service responded)
@@ -54,7 +55,6 @@ class PortScanner(NetworkTool):
                         pass
                 except Exception as e:
                     print(f"Błąd skanowania portu {port}: {e}")
-            # Update progress
             print(f"Scanned {scanned_ports}/{total_ports} UDP ports.", end="\r")
 
         print("\nSkanowanie UDP zakończone.")

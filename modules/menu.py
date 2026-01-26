@@ -14,13 +14,13 @@ class Menu():
     ║                    Network Toolkit                         ║
     ╠════════════════════════════════════════════════════════════╣
     ║ 1) Skaner portów (TCP/UDP)       — audyt własnych hostów   ║
-    ║ 2) Generator ruchu (symulacja)   — tylko lab / sandbox     ║
-    ║ 3) Symulacje obciążeniowe        — kontrolowane testy      ║
+    ║ 2) Generator ruchu (diagnostyka) — limitowane              ║
+    ║ 3) Symulacje obciążeniowe        — limitowane              ║
     ║ 4) Przechwytywanie pakietów (pcap) — zapis / analiza       ║
     ║ 5) Wyjście                                                 ║
     ╠════════════════════════════════════════════════════════════╣
-    ║ Uwaga: Wszystkie operacje uruchamiaj tylko w środowisku    ║
-    ║ testowym lub na systemach, na które masz pisemną zgodę.    ║
+    ║ Uwaga: Używaj tylko na hostach/sieciach, na które masz     ║
+    ║ uprawnienia. Moduły 2/3 są celowo limitowane.              ║
     ╚════════════════════════════════════════════════════════════╝
     """)
 
